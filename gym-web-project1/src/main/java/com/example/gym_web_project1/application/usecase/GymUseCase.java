@@ -37,23 +37,16 @@ public class GymUseCase {
         return gymDao.findAll();
     }
 
-    public String updateGymType(Gym gym) throws GymTypeNotFoundException {
-//        Boolean isPresent = Optional.ofNullable(gymDao.findById(id)).isPresent();
-//
-//        if (!isPresent) {
-//            throw new GymTypeNotFoundException(" gym type not found");
-//        }
-//
-//        gymDao.updateGymType(gym, id);
-//        return "GymType is updated";
-
-        Boolean isPresent= Optional.ofNullable(gymDao.findByGymType(gym.getGymType())).isPresent();
-              if(!isPresent){
-                  throw new GymTypeNotFoundException("gym type is not found");
-              }
-
-              gymDao.updateGymType(gym);
-              return "GymType is updated";
+    public String updateGym(Gym gym) throws GymTypeNotFoundException {
+        if((gym.getId()==null)){
+            throw new GymTypeNotFoundException("Gym id needs to there for updating the data");
+        }
+      Boolean isPresent = gymDao.findById(gym.getId()).isPresent();
+       if(!isPresent){
+           throw new GymTypeNotFoundException("Gym id is not present");
+       }
+       gymDao.updateGym(gym);
+       return "Gym data is updated";
     }
     public Optional<GymEntity> findById(Integer id) {
         return gymDao.findById(id);

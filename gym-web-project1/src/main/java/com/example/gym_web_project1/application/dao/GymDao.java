@@ -13,7 +13,7 @@ public interface GymDao {
 
     public List<GymEntity> findAll();
 
-    public void updateGymType(Gym gym);
+    public void updateGym(Gym gym);
 
     Optional<Gym> findByGymType(String gymType);
 

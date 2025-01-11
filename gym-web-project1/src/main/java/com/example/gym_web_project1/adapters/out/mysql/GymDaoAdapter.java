@@ -4,6 +4,7 @@ import com.example.gym_web_project1.adapters.out.mysql.entities.GymEntity;
 import com.example.gym_web_project1.adapters.out.mysql.repositories.GymRepositories;
 import com.example.gym_web_project1.application.dao.GymDao;
 import com.example.gym_web_project1.domain.Gym;
+import com.example.gym_web_project1.infrastructure.GymTypeNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -35,12 +36,16 @@ public class GymDaoAdapter implements GymDao {
     }
 
     @Override
-    public void updateGymType(Gym gym) {
-        GymEntity gymEntity = new GymEntity(
-                gym.getGymType(),
-                gym.getGymFee(),
-                gym.getGymLocation()
-        );
+    public void updateGym(Gym gym) {
+
+        GymEntity oldGym= gymRepo.findById(gym.getId()).orElseThrow(()-> new GymTypeNotFoundException("gym id is not found" +gym.getId()));
+
+        oldGym.setGymType(gym.getGymType());
+        oldGym.setGymFee(gym.getGymFee());
+        oldGym.setGymLocation(gym.getGymLocation());
+
+        gymRepo.save(oldGym);
+
 
     }
 

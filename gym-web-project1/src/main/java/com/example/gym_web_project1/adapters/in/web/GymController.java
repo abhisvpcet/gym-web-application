@@ -26,9 +26,17 @@ public class GymController {
         return gymUseCase.findAll();
     }
 
-    @PutMapping("/update/{gymType}")
+    @PutMapping("/update/gym/{id}")
     public String updateGym(@RequestBody Gym gym){
-        return gymUseCase.updateGymType(gym);
+
+        GymEntity gymEntity= new GymEntity();
+
+        gymEntity.setId(gym.getId());
+        gymEntity.setGymType(gym.getGymType());
+        gymEntity.setGymFee(gym.getGymFee());
+        gymEntity.setGymLocation(gym.getGymLocation());
+
+        return gymUseCase.updateGym(gym);
     }
 
     @GetMapping("/{id}")
