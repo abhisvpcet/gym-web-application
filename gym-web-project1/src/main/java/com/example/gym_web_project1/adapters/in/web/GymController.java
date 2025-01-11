@@ -5,12 +5,16 @@ import com.example.gym_web_project1.adapters.out.mysql.entities.GymEntity;
 import com.example.gym_web_project1.application.usecase.GymUseCase;
 import com.example.gym_web_project1.domain.Gym;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+
 
 import java.util.List;
 import java.util.Optional;
 
 @RestController
+@Validated
 public class GymController {
 
     @Autowired
