@@ -75,5 +75,6 @@ When maintainability, scalability, and testability are critical.
 When the application needs to integrate with multiple external systems (or is likely to change technologies in the future).
 
 
+![Untitled Diagram drawio](https://github.com/user-attachments/assets/b7e73263-a971-4e18-bcd0-67812abe7047)
 
 
