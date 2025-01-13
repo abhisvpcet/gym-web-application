@@ -1,5 +1,23 @@
 ![266601786-0e55689f-47b6-407c-a5de-55feaaf1933c](https://github.com/user-attachments/assets/673984e5-cf55-45f2-a8d0-c85373fcbec5)"# gym-web-application" 
 
+
+Core (Innermost Layer):
+The core is the heart of the application and contains the business logic. It represents the fundamental rules and processes that define the application's behavior. This layer is independent of external systems and should be kept free from any framework-specific code.
+
+Ports (Interfaces):
+Ports define the interfaces or contracts through which the core interacts with the external world. They are essentially the entry and exit points for data and operations in the application. Ports include input ports (for receiving data or commands) and output ports (for sending data, events, or notifications to external systems without knowing their specific implementations).
+
+Adapters (Outer Layers):
+Adapters are responsible for implementing the ports defined in the core. They bridge the gap between the core and external systems, translating requests and responses as needed. There are different types of adapters, including:
+
+Input or Primary Adapters or Driven Adapters: These are responsible for receiving input from external sources (e.g., user interfaces, API endpoints) and converting it into a format that the core can understand.
+
+Output or Secondary Adapters or Driving Adapters: These handle communication with external resources like databases, third-party services, or external APIs.
+
+External Systems or Frameworks and Drivers (Outermost Layer):
+This layer contains the external systems and frameworks that the application uses. It includes elements like databases, web frameworks, UI libraries, and other external tools. The adapters in this layer facilitate communication between the application and these external systems.
+
+
 1. DTO (Data Transfer Object)
 Purpose:
 DTOs act as the boundary objects for communication between the external world (e.g., API clients, other services) and your application.
@@ -57,20 +75,5 @@ When maintainability, scalability, and testability are critical.
 When the application needs to integrate with multiple external systems (or is likely to change technologies in the future).
 
 
-Core (Innermost Layer):
-The core is the heart of the application and contains the business logic. It represents the fundamental rules and processes that define the application's behavior. This layer is independent of external systems and should be kept free from any framework-specific code.
-
-Ports (Interfaces):
-Ports define the interfaces or contracts through which the core interacts with the external world. They are essentially the entry and exit points for data and operations in the application. Ports include input ports (for receiving data or commands) and output ports (for sending data, events, or notifications to external systems without knowing their specific implementations).
-
-Adapters (Outer Layers):
-Adapters are responsible for implementing the ports defined in the core. They bridge the gap between the core and external systems, translating requests and responses as needed. There are different types of adapters, including:
-
-Input or Primary Adapters or Driven Adapters: These are responsible for receiving input from external sources (e.g., user interfaces, API endpoints) and converting it into a format that the core can understand.
-
-Output or Secondary Adapters or Driving Adapters: These handle communication with external resources like databases, third-party services, or external APIs.
-
-External Systems or Frameworks and Drivers (Outermost Layer):
-This layer contains the external systems and frameworks that the application uses. It includes elements like databases, web frameworks, UI libraries, and other external tools. The adapters in this layer facilitate communication between the application and these external systems.
 
 
