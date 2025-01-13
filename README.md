@@ -42,3 +42,16 @@ Defines interfaces (Ports) for persistence or external communication.
 Repository/Service (Outbound Adapter):
 Converts the Domain Model (Movie) to a Persistence Entity (MovieEntity) for database interaction.
 Or converts the domain model to an Outbound DTO for external APIs.
+
+
+
+Normal Spring Boot Project:
+Ideal for simple or small projects.
+When speed of development is more important than maintainability.
+When the application doesn't need to accommodate frequent changes in infrastructure.
+
+
+Hexagonal Architecture Spring Boot Project:
+Suitable for complex or long-lived projects.
+When maintainability, scalability, and testability are critical.
+When the application needs to integrate with multiple external systems (or is likely to change technologies in the future).
